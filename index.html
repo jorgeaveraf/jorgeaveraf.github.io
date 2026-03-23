@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV profesional de Jorge Avera – Desarrollador de Software" />
+  <title>Jorge Avera – CV</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Side navigation dots (desktop) -->
+  <nav id="side-nav" aria-label="Navegación de secciones"></nav>
+
+  <!-- Main content wrapper -->
+  <main class="page-wrapper">
+
+    <!-- Each slot is populated by main.js via fetch() -->
+    <div id="slot-header"></div>
+    <div id="slot-experiencia"></div>
+    <div id="slot-educacion"></div>
+    <div id="slot-skills"></div>
+    <div id="slot-certificaciones"></div>
+    <div id="slot-intereses"></div>
+    <div id="slot-lenguajes"></div>
+
+  </main>
+
+  <!-- Scroll-to-top button -->
+  <button id="scroll-top" aria-label="Volver arriba">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
