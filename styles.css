@@ -1,0 +1,389 @@
+/* ===================================================
+   CV – Elon Musk Style  |  Jorge Avera
+   Clean · Bold · Dark · Minimalist
+   =================================================== */
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #0d0d0d;
+  --surface:      #141414;
+  --surface-2:    #1c1c1c;
+  --border:       #2a2a2a;
+  --accent:       #e8272b;      /* Tesla / flagship red */
+  --accent-dim:   #9a1a1d;
+  --text:         #f0f0f0;
+  --text-muted:   #888;
+  --text-dim:     #555;
+  --font-sans:    'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+  --radius:       6px;
+  --transition:   0.25s ease;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+p  { font-size: 0.95rem; color: var(--text-muted); }
+a  { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.8; }
+
+/* ---------- Layout wrapper ---------- */
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ---------- Section generic ---------- */
+.cv-section {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.cv-section:last-child { border-bottom: none; }
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  color: var(--text);
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-title .icon { font-size: 1.3rem; }
+
+/* ---------- HEADER section ---------- */
+#header-section {
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-text { flex: 1; }
+.header-text .name { margin-bottom: 0.3rem; }
+.header-text .title {
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+.header-text .summary {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 1.1rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  transition: border-color var(--transition), color var(--transition);
+}
+.contact-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- EXPERIENCE section ---------- */
+.job-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.job-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.job-company {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.job-period {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  text-align: right;
+}
+.job-role {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+.job-desc {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.job-desc ul { padding-left: 1.2rem; }
+.job-desc li { margin-bottom: 0.35rem; }
+
+/* ---------- EDUCATION section ---------- */
+.edu-entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.2rem 1rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.edu-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.edu-institution { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+.edu-period { font-size: 0.82rem; color: var(--text-dim); white-space: nowrap; text-align: right; }
+.edu-degree {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+.edu-desc { grid-column: 1 / -1; font-size: 0.9rem; color: var(--text-muted); }
+
+/* ---------- SKILLS section ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-category h4 { margin-bottom: 0.7rem; }
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.skill-tag {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  color: var(--text-muted);
+  transition: border-color var(--transition), color var(--transition);
+}
+.skill-tag:hover { border-color: var(--accent); color: var(--text); }
+
+/* ---------- CERTIFICATIONS section ---------- */
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  transition: border-color var(--transition);
+}
+.cert-card:hover { border-color: var(--accent); }
+
+.cert-name { font-size: 0.93rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+.cert-issuer { font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.cert-date { font-size: 0.78rem; color: var(--text-dim); }
+
+/* ---------- INTERESTS section ---------- */
+.interests-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.interest-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: border-color var(--transition), color var(--transition);
+}
+.interest-item:hover { border-color: var(--accent); color: var(--text); }
+.interest-item .icon { font-size: 1.1rem; }
+
+/* ---------- LANGUAGES section ---------- */
+.lang-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.lang-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+.lang-name { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.lang-level { font-size: 0.78rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; }
+.lang-bar-bg {
+  height: 4px;
+  background: var(--surface-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lang-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ---------- Scroll-to-top button ---------- */
+#scroll-top {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  width: 42px;
+  height: 42px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  z-index: 99;
+}
+#scroll-top.visible { opacity: 1; pointer-events: auto; }
+
+/* ---------- Nav sidebar (desktop) ---------- */
+#side-nav {
+  position: fixed;
+  left: calc(50% - 470px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+@media (max-width: 1100px) { #side-nav { display: none; } }
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  position: relative;
+}
+.nav-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.nav-dot:hover::after, .nav-dot.active::after { opacity: 1; }
+.nav-dot.active { background: var(--accent); transform: scale(1.4); }
+.nav-dot:hover { background: var(--text-muted); }
+
+/* ---------- Loading placeholder ---------- */
+.section-loading {
+  height: 60px;
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .header-inner { flex-direction: column; text-align: center; }
+  .contact-links { justify-content: center; }
+  .job-entry, .edu-entry { grid-template-columns: 1fr; }
+  .job-period, .edu-period { text-align: left; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  :root { --bg: #fff; --surface: #f9f9f9; --surface-2: #f0f0f0; --text: #000; --text-muted: #444; --border: #ccc; }
+  body { background: #fff; }
+  #scroll-top, #side-nav { display: none !important; }
+}
