@@ -70,3 +70,33 @@ Luego abre `http://localhost:8080` en el navegador.
 
 El sitio se despliega automáticamente en **GitHub Pages** al hacer push a la rama principal.  
 No requiere proceso de build ni dependencias de Node.
+
+---
+
+## Calidad de código
+
+El repositorio incluye herramientas de linting para mantener la calidad del código:
+
+| Herramienta | Alcance | Configuración |
+|---|---|---|
+| [ESLint](https://eslint.org) | `main.js` | `eslint.config.js` |
+| [HTMLHint](https://htmlhint.com) | todos los `.html` | `.htmlhintrc` |
+| [Stylelint](https://stylelint.io) | `styles.css` | `.stylelintrc.json` |
+
+### Ejecutar los linters localmente
+
+```bash
+# Instalar dependencias (solo la primera vez)
+npm install
+
+# Ejecutar todos los linters a la vez
+npm run lint
+
+# O por separado
+npm run lint:js
+npm run lint:html
+npm run lint:css
+```
+
+Los linters también se ejecutan automáticamente en **GitHub Actions** (`quality.yml`) en cada push y pull request hacia `main`.
+
