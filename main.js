@@ -24,7 +24,7 @@ async function loadSection(section) {
     const html = await res.text();
     container.innerHTML = html;
   } catch (err) {
-    container.innerHTML = `<p style="color:#888;font-size:.85rem;">⚠ Could not load ${section.file}</p>`;
+    container.innerHTML = `<p class="section-error">⚠ No se pudo cargar ${section.file}</p>`;
     console.error(`[CV] Failed to load ${section.file}:`, err);
   }
 }
