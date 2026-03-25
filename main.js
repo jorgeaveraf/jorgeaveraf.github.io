@@ -4,13 +4,13 @@
  */
 
 const SECTIONS = [
-  { id: 'header',         file: 'header.html',         label: 'Perfil'         },
-  { id: 'experiencia',    file: 'experiencia.html',     label: 'Experiencia'    },
-  { id: 'educacion',      file: 'educacion.html',       label: 'Educación'      },
-  { id: 'skills',         file: 'skills.html',          label: 'Habilidades'    },
-  { id: 'certificaciones',file: 'certificaciones.html', label: 'Certificaciones'},
-  { id: 'intereses',      file: 'intereses.html',       label: 'Intereses'      },
-  { id: 'lenguajes',      file: 'lenguajes.html',       label: 'Lenguajes'      },
+  { id: 'header',         file: 'header.html',         label: 'Profile'         },
+  { id: 'experiencia',    file: 'experiencia.html',     label: 'Experience'      },
+  { id: 'educacion',      file: 'educacion.html',       label: 'Education'       },
+  { id: 'skills',         file: 'skills.html',          label: 'Skills'          },
+  { id: 'certificaciones',file: 'certificaciones.html', label: 'Certifications'  },
+  { id: 'intereses',      file: 'intereses.html',       label: 'Interests'       },
+  { id: 'lenguajes',      file: 'lenguajes.html',       label: 'Languages'       },
 ];
 
 /* ── Fetch & inject each section ── */
