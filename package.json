@@ -1,0 +1,31 @@
+{
+  "name": "jorgeaveraf.github.io",
+  "version": "1.0.0",
+  "description": "CV profesional de **Jorge Vera** – Data Engineer · Workflow Automation Specialist · AI Systems Architect.",
+  "main": "main.js",
+  "scripts": {
+    "lint:html": "htmlhint \"*.html\"",
+    "lint:css": "stylelint styles.css",
+    "lint:js": "eslint main.js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgeaveraf/jorgeaveraf.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jorgeaveraf/jorgeaveraf.github.io/issues"
+  },
+  "homepage": "https://github.com/jorgeaveraf/jorgeaveraf.github.io#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "htmlhint": "^1.9.2",
+    "stylelint": "^17.5.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
