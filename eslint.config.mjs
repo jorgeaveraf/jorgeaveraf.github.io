@@ -14,6 +14,7 @@ export default [
         Promise: "readonly",
         IntersectionObserver: "readonly",
         fetch: "readonly",
+        localStorage: "readonly",
       },
     },
     rules: {
