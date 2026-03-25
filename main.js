@@ -94,10 +94,37 @@ function initLangBars() {
   });
 }
 
+/* ── Dark / Light mode toggle ── */
+function applyTheme(theme) {
+  const btn = document.getElementById('theme-toggle');
+  if (theme === 'light') {
+    document.documentElement.dataset.theme = 'light';
+    if (btn) { btn.textContent = '☀️'; btn.setAttribute('aria-label', 'Switch to dark mode'); }
+  } else {
+    delete document.documentElement.dataset.theme;
+    if (btn) { btn.textContent = '🌙'; btn.setAttribute('aria-label', 'Switch to light mode'); }
+  }
+}
+
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  const saved = localStorage.getItem('cv-theme') || 'dark';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('cv-theme', next);
+  });
+}
+
 /* ── Bootstrap ── */
 async function init() {
   buildSideNav();
   initScrollTop();
+  initThemeToggle();
 
   // Load all sections in parallel
   await Promise.all(SECTIONS.map(loadSection));
